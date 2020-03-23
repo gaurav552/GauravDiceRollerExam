@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity{
         result = findViewById(R.id.result);
         tensided = findViewById(R.id.tenSided);
         ten = findViewById(R.id.ten);
-        lastChecked = findViewById(R.id.four);
         four = findViewById(R.id.four);
 
         tensided.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -37,10 +36,10 @@ public class MainActivity extends AppCompatActivity{
                 } else {
                     Toast.makeText(getBaseContext(), "True mode Disabled", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
         four.setChecked(true);
+        lastChecked = four;
         result.setText("0");
         tenTrue();
     }
@@ -80,12 +79,12 @@ public class MainActivity extends AppCompatActivity{
         int[] output = {0,0};
         if (v.getId() == once.getId()){
             output[0] = !tensided.isChecked() ? (int)(Math.random() * side) + 1 : (int)(Math.random() * side)  ;
-            result.setText(Integer.toString(output[0]));
+            result.setText((Integer.toString(output[0])));
         } else if (v.getId() == twice.getId()){
             output[0] = !tensided.isChecked() ? (int)(Math.random() * side) + 1 : (int)(Math.random() * side)  ;
 
             output[1] = !tensided.isChecked() ? (int)(Math.random() * side) + 1 : (int)(Math.random() * side)  ;
-            result.setText(Integer.toString(output[0]) +"     "+ Integer.toString(output[1]));
+            result.setText((output[0] +"     "+ output[1]));
         }
     }
 
