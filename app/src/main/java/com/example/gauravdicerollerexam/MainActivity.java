@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity{
         } else if (checkedId == R.id.twenty){
             side = 20;
         }
+
         tenTrue();
     }
 
