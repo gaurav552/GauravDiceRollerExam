@@ -78,11 +78,13 @@ public class MainActivity extends AppCompatActivity{
     public void roll(View v){
         int[] output = {0,0};
         if (v.getId() == once.getId()){
+
             output[0] = !tensided.isChecked() ? (int)(Math.random() * side) + 1 : (int)(Math.random() * side)  ;
             result.setText((Integer.toString(output[0])));
-        } else if (v.getId() == twice.getId()){
-            output[0] = !tensided.isChecked() ? (int)(Math.random() * side) + 1 : (int)(Math.random() * side)  ;
 
+        } else if (v.getId() == twice.getId()){
+
+            output[0] = !tensided.isChecked() ? (int)(Math.random() * side) + 1 : (int)(Math.random() * side)  ;
             output[1] = !tensided.isChecked() ? (int)(Math.random() * side) + 1 : (int)(Math.random() * side)  ;
             result.setText((output[0] +"     "+ output[1]));
         }
